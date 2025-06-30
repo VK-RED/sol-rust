@@ -28,7 +28,9 @@ async fn create_token() -> impl Responder{
 #[actix_web::main]
 async fn main() -> Result<(), std::io::Error>{
 
-    let address = format!("127.0.0.1:{}", PORT);
+    let address = format!("0.0.0.0:{}", PORT);
+
+    println!("running server at port : {}", PORT);
 
     HttpServer::new(||{
         App::new()
